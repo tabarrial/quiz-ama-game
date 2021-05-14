@@ -8,9 +8,9 @@ class Popup extends Component {
         
         this.state = {
             time: 'start',
-            title: 'Welcome to React Quiz',
-            text: 'This is a quiz application built using ReactJS. <br /><br />',
-            buttonText: 'Start the quiz' 
+            title: '¡Bienvenid@ paradigmatic@!',
+            text: 'Aquí algunas preguntas sobre mí... <br /><br />',
+            buttonText: 'Comenzaaar!' 
         };
         
         this.popupHandle = this.popupHandle.bind(this);
@@ -22,7 +22,7 @@ class Popup extends Component {
         if(time === 'start'){
             this.setState({
                 time: 'end',
-                title: 'Congratulations!',
+                title: 'Gracias por participar!',
                 buttonText: 'Restart'
             });
 
@@ -41,10 +41,10 @@ class Popup extends Component {
     
     componentWillReceiveProps(nextProps) {
         this.setState({
-            text: 'You have completed the quiz. <br /> You got: <strong>' + this.props.score + 
-            '</strong> out of <strong>' + 
+            text: 'Terminaste las preguntas!. <br /> Acertastes: <strong>' + this.props.score + 
+            '</strong> de un total de <strong>' + 
             this.props.total +
-            '</strong> questions right.'
+            '</strong> preguntas.'
         })
     }
 
